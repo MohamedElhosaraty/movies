@@ -1,7 +1,7 @@
 
 import '../../features/movies/domain/entities/movies_entity.dart';
 
-List<Movie> moviesList = [
+List<Movie> moviesListDummy = [
   const Movie(
     backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
     genreIds: [

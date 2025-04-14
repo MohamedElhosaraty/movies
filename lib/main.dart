@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/helper_functions/on_generate_route.dart';
@@ -13,6 +14,12 @@ void main() async {
   Bloc.observer = CustomBlocObserver();
   await Prefs.init();
   setupGetIt();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, // هنا خلي اللون شفاف
+      statusBarIconBrightness: Brightness.dark, // أو dark حسب لون الخلفية
+    ),
+  );
   runApp(const MyApp());
 }
 
