@@ -2,9 +2,12 @@ import 'package:get_it/get_it.dart';
 import 'package:movies/features/movies/data/data_source/movie_remote_data_source.dart';
 import 'package:movies/features/movies/data/repository/movie_repo_impl.dart';
 import 'package:movies/features/movies/domain/repository/movies_repo.dart';
+import 'package:movies/features/movies/domain/usecases/get_movie_details_usecase.dart';
+import 'package:movies/features/movies/domain/usecases/get_movie_recommendation.dart';
 import 'package:movies/features/movies/domain/usecases/get_now_playing_movies.dart';
 import 'package:movies/features/movies/domain/usecases/get_popular_movies.dart';
 import 'package:movies/features/movies/domain/usecases/get_top_rated_movies.dart';
+import 'package:movies/features/movies/presentation/controller/movie_details_bloc.dart';
 import '../../features/movies/presentation/controller/movies_bloc.dart';
 import 'api_service.dart';
 
@@ -15,6 +18,7 @@ void setupGetIt() async{
 
   //bloc
   getIt.registerFactory<MoviesBloc>(() => MoviesBloc(getIt(), getIt(), getIt()));
+  getIt.registerFactory<MovieDetailsBloc>(() => MovieDetailsBloc(getIt(), getIt()));
 
   // Data Source
   getIt.registerSingleton<BaseMovieRemoteDataSource>(
@@ -28,6 +32,8 @@ void setupGetIt() async{
   getIt.registerSingleton( GetNowPlayingMovies(getIt.get<MoviesRepo>()));
   getIt.registerSingleton( GetTopRatedMovies(getIt.get<MoviesRepo>()));
   getIt.registerSingleton( GetPopularMovies(getIt.get<MoviesRepo>()));
+  getIt.registerSingleton( GetMovieDetailsUsecase(getIt.get<MoviesRepo>()));
+  getIt.registerSingleton( GetMovieRecommendation(getIt.get<MoviesRepo>()));
 
   // getIt.registerSingleton<UserRemoteDataSource>(
   //     UserRemoteDataSourceImpl(apiService: getIt.get<ApiService>()));

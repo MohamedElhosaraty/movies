@@ -11,4 +11,9 @@ class EndPoint {
   static const String popularMovies = 'movie/popular?api_key=$apiKey';
 
   static const String topRatedMovies = 'movie/top_rated?api_key=$apiKey';
+
+  static String movieDetails(int movieId) => 'movie/$movieId?api_key=$apiKey';
+
+  static String movieRecommendation(int movieId) =>
+      'movie/$movieId/recommendations?api_key=$apiKey';
 }
