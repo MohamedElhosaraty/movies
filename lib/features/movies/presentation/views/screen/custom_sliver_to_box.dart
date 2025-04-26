@@ -35,7 +35,7 @@ class CustomSliverToBox extends StatelessWidget {
                       horizontal: 8.0,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.grey[800],
+                      color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     child: Text(

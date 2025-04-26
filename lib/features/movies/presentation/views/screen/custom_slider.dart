@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/features/movies/presentation/controller/movies_bloc.dart';
+import 'package:movies/features/movies/presentation/views/movie_detail_screen.dart';
 
 import '../../../../../core/utils/end_point.dart';
 import '../../../../../core/utils/enum.dart';
@@ -43,6 +44,8 @@ class CustomSliderAnimated extends StatelessWidget {
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
                         /// TODO : NAVIGATE TO MOVIE DETAILS
+                        Navigator.pushNamed(context, MovieDetailScreen.routeName,arguments: item.id);
+
                       },
                       child: Stack(
                         children: [

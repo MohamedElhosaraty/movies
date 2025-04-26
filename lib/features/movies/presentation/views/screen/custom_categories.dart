@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movies/features/movies/presentation/views/all_movies.dart';
+
+import '../../../domain/entities/movies_entity.dart';
 
 class CustomCategories extends StatelessWidget {
-  const CustomCategories({super.key, required this.title});
+  const CustomCategories({super.key, required this.title, required this.movies});
 
   final String title;
+  final List<Movie> movies ;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +28,9 @@ class CustomCategories extends StatelessWidget {
           InkWell(
             onTap: () {
               /// TODO : NAVIGATION TO POPULAR SCREEN
+              Navigator.pushNamed(context, AllMovies.routeName,
+                  arguments: movies);
+
             },
             child: const Padding(
               padding: EdgeInsets.all(8.0),

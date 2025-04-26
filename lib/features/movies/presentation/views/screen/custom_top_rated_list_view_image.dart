@@ -8,6 +8,7 @@ import 'package:movies/features/movies/presentation/controller/movies_bloc.dart'
 import 'package:shimmer/shimmer.dart';
 
 import '../../controller/movies_state.dart';
+import '../movie_detail_screen.dart';
 
 class CustomTopRatedListViewImage extends StatelessWidget {
   const CustomTopRatedListViewImage({
@@ -46,6 +47,8 @@ class CustomTopRatedListViewImage extends StatelessWidget {
                       child: InkWell(
                         onTap: () {
                           /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.pushNamed(context, MovieDetailScreen.routeName,arguments: movie.id);
+
                         },
                         child: ClipRRect(
                           borderRadius:

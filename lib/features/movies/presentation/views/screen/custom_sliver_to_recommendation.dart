@@ -20,8 +20,10 @@ class CustomSliverToRecommendation extends StatelessWidget {
 
         switch (state.movieRecommendationState) {
           case RequestState.loading:
-            return const Center(
-              child: CircularProgressIndicator(),
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
             );
           case RequestState.loaded:
             return SliverPadding(
@@ -29,7 +31,15 @@ class CustomSliverToRecommendation extends StatelessWidget {
               sliver: _showRecommendations(state.movieRecommendation ?? recommendationDummy),
             );
           case RequestState.error:
-            return Text(state.movieDetailsMessage);
+            return SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  state.movieDetailsMessage,
+                  style: const TextStyle(color: Colors.red),
+                ),
+              ),
+            );
         }
       },
     );
