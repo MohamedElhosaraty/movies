@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies/features/movies/presentation/views/all_movies.dart';
 
+import '../../../../../core/utils/app_string.dart';
 import '../../../domain/entities/movies_entity.dart';
 
 class CustomCategories extends StatelessWidget {
@@ -36,7 +37,7 @@ class CustomCategories extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Text('See More'),
+                  Text(AppString.seeMore),
                   Icon(
                     Icons.arrow_forward_ios,
                     size: 16.0,

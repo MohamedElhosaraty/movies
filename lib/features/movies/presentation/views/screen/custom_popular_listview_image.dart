@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +46,6 @@ class CustomPopularListviewImage extends StatelessWidget {
                       child: InkWell(
                         onTap: () {
                           /// TODO : NAVIGATE TO  MOVIE DETAILS
-                          log ("movie.id : ${movie.id}");
                            Navigator.pushNamed(context, MovieDetailScreen.routeName,arguments: movie.id);
                         },
                         child: ClipRRect(

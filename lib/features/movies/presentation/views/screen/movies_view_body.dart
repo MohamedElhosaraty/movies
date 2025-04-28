@@ -6,6 +6,7 @@ import 'package:movies/features/movies/presentation/views/screen/custom_popular_
 import 'package:movies/features/movies/presentation/views/screen/custom_slider.dart';
 import 'package:movies/features/movies/presentation/views/screen/custom_top_rated_list_view_image.dart';
 
+import '../../../../../core/utils/app_string.dart';
 import '../../../../../core/utils/enum.dart';
 import '../../controller/movies_state.dart';
 
@@ -28,7 +29,7 @@ class MoviesViewBody extends StatelessWidget {
             builder: (context, state) {
               if (RequestState.loaded == state.popularState) {
                 return CustomCategories(
-                  title: "Popular",
+                  title: AppString.popular,
                   movies: state.popularMovies,
                 );
               }
@@ -42,7 +43,7 @@ class MoviesViewBody extends StatelessWidget {
             builder: (context, state) {
               if (RequestState.loaded == state.topRatedState) {
                 return CustomCategories(
-                    movies: state.topRatedMovies, title: "Top Rated");
+                    movies: state.topRatedMovies, title: AppString.topRated);
               }
 
               return const SizedBox();

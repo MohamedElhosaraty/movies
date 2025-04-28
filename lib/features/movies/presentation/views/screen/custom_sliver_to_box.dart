@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movies/core/utils/app_string.dart';
 
 import '../../../domain/entities/movie_details.dart';
 
@@ -98,7 +99,7 @@ class CustomSliverToBox extends StatelessWidget {
               ),
               const SizedBox(height: 8.0),
               Text(
-                'Genres: ${_showGenres(movie.genres)}',
+                '${AppString.genres} ${_showGenres(movie.genres)}',
                 style: const TextStyle(
                   color: Colors.orangeAccent,
                   fontSize: 15.0,

@@ -12,7 +12,7 @@ class CustomSliverAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return         SliverAppBar(
+    return SliverAppBar(
       pinned: true,
       expandedHeight: 250.0,
       flexibleSpace: FlexibleSpaceBar(

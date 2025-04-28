@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/features/movies/domain/entities/movie_details.dart';
 
+import '../../../../../core/utils/app_string.dart';
 import 'custom_sliver_app_bar.dart';
 import 'custom_sliver_to_box.dart';
 import 'custom_sliver_to_recommendation.dart';
@@ -31,7 +32,7 @@ class MovieDetailContent extends StatelessWidget {
               from: 20,
               duration: const Duration(milliseconds: 500),
               child: Text(
-                'More like this'.toUpperCase(),
+                AppString.moreLikeThis.toUpperCase(),
                 style: const TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w500,

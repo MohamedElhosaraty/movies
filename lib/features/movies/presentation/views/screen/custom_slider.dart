@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/core/utils/app_string.dart';
 import 'package:movies/features/movies/presentation/controller/movies_bloc.dart';
 import 'package:movies/features/movies/presentation/views/movie_detail_screen.dart';
 
@@ -90,7 +91,7 @@ class CustomSliderAnimated extends StatelessWidget {
                                       ),
                                       const SizedBox(width: 4.0),
                                       Text(
-                                        'Now Playing'.toUpperCase(),
+                                        AppString.nowPlaying.toUpperCase(),
                                         style: const TextStyle(
                                           fontSize: 16.0,
                                         ),

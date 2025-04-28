@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies/core/utils/app_string.dart';
 import 'core/helper_functions/on_generate_route.dart';
 import 'core/services/custom_bloc_observer.dart';
 import 'core/services/get_it_services.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (_, child) {
           return MaterialApp(
+            title: AppString.appName,
             theme: ThemeData(
               fontFamily: "Cairo",
               scaffoldBackgroundColor: Colors.white,
